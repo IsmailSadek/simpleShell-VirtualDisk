@@ -37,9 +37,6 @@ private:
                 cout << "Unable to open file";
             }
         }
-        else {
-            cout << "the file exists" << endl;
-        }
     }
     void writeBlock(string datatoBeWritten, int index) {
         std::fstream fs;
