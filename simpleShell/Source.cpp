@@ -20,11 +20,8 @@ using std::filesystem::exists;
 int main() {
     cout << "MINI-FAT Project [Version 1.0]" << endl;
     VirtualDisk fatfile;
-    string dd = "Virtual Desk.txt";
-    cout << "size of file '" << dd << "' = " <<std::filesystem::file_size(dd)/1024 <<" Bytes" << endl;
     FAT consto;
     //DirectoryEntry hh;
-    
     while (1)
     {
         cout << fs::current_path() << ">"; // .root_path();
