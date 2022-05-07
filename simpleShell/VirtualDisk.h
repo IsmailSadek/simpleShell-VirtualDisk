@@ -11,7 +11,6 @@ class VirtualDisk
 private:
     void initialize()
     {
-        //cout << "\t hello \t" << endl;
         if (exists("Virtual Desk.txt") == 0)
         {
             ofstream myfile("Virtual Desk.txt");
@@ -65,41 +64,12 @@ private:
             fs.seekg(indexValue, ios::beg);
             
             fs.read(reading, 1024);
-            /*for (int i = 0; i < 1024; i++) {
-                cout << reading[i] ;
-            }*/
             fs.close();
         }
-        /*cout << endl;*/
         return reading;
     }
 public:
     VirtualDisk() {
         initialize();
-        /*string bgbg = getBlock(2);
-        for (int i = 0; i < 1024; i++) {
-            cout << bgbg[i];
-        }
-        cout << endl;*/
-        /*getBlock(0);
-        cout << endl;
-        getBlock(1);
-        cout << endl;
-        getBlock(2);
-        cout << endl;
-        getBlock(3);
-        cout << endl;
-        getBlock(4);
-        cout << endl;
-        getBlock(5);
-        cout << endl;
-        getBlock(1023);
-        cout << endl;
-        string afg;
-        getline(cin, afg);
-        writeBlock(afg, 5);
-        cout << endl;
-        getBlock(5);
-        cout << endl;*/
     }
 };
