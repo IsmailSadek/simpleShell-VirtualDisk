@@ -19,17 +19,11 @@ private:
             else
                 fat_table[i] = 0;
         }
-        /*for (int i = 0; i < 1024; i++) {
-            cout << fat_table[i];
-        }*/
-        cout << endl;
     }
     void write_fat_table() {
         std::fstream fs;
         fs.open("Virtual Desk.txt");
         if (fs.is_open()) {
-            cout << "\t hello \t" << endl;
-
             char arrayofbytes[1024][4] = {};
             for (int i = 0; i < 1024; i++)
             {
@@ -58,22 +52,11 @@ private:
                     bytes = '0' + y;
                     arrayofbytes[i][0] = bytes;
                 }
-                //printing the fat table
-                 //cout << "Integer: " << fat_table[i] << " ";
-                 //cout << "Byte Array: ";
-                /* for (int j = 0; j < 4; j++)
-                 {
-                     cout << arrayofbytes[i][j] <<" ";
-                 }*/
-                 //cout << endl;
             }
-            //cout << endl;
             fs.seekg(1024, ios::beg); // seeking to the place of the fat table
-
             for (int i = 0; i < 1024; i++) {
                 for (int j = 0; j < 4; j++) {
                     fs << arrayofbytes[i][j];
-                    //cout << arrayofbytes[i][j] << " ";
                 }
             }
             fs.close();
@@ -96,10 +79,8 @@ private:
             for (int j = 0; j <= 3; j++) {
 
                 FatTable2[i][j] = readingFatTable[counter];
-                //cout << FatTable2[i][j] << " ";
                 counter++;
             }
-            //cout << endl;
         }
         for (int i = 0; i < 1024; i++) {
             if (FatTable2[i][3] == '$') {
@@ -112,7 +93,6 @@ private:
                 p += (FatTable2[i][0] - '0') * 1000;
                 retrievedFatTable[i] = p;
             }
-            //cout << retrievedFatTable[i] << endl;
         }
         return retrievedFatTable;
     }
@@ -155,12 +135,5 @@ public:
         fat_table = new int[1024];
         initialize();
         write_fat_table();
-        //read_fat_table();
-        //setNext(5, 5);
-        //cout << getNext(5) << endl;
-        //printFatTable();
-        /*int fblock=getAvailableBlock();
-        int cblock = getAvailableBlocks();
-        cout << fblock << "..........." << cblock << endl;*/
     }
 };
