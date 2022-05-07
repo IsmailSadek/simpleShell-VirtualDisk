@@ -11,7 +11,6 @@
 #include "VirtualDisk.h"
 #include "Fat.h"
 #include "Commands.h"
-#include "DirectoryEntry.h"
 
 namespace fs = std::filesystem;
 using namespace std;
@@ -21,7 +20,6 @@ int main() {
     cout << "MINI-FAT Project [Version 1.0]" << endl;
     VirtualDisk fatfile;
     FAT consto;
-    //DirectoryEntry hh;
     while (1)
     {
         cout << fs::current_path() << ">"; // .root_path();
@@ -64,7 +62,3 @@ int main() {
     }
     return 0;
 }
-/*
-system("dir") ... to display the contents of the dirctory
-system("tree") .. to display the tree of that directory
-*/
